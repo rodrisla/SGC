@@ -7,12 +7,12 @@ class VendedorRepository {
 
   async obtenerTodos() {
     return await Vendedor.find()
-      .populate("areas")
+      .populate("area")
       .sort({ apellido: 1, nombre: 1 });
   }
 
   async obtenerPorId(id) {
-    return await Vendedor.findById(id).populate("areas");
+    return await Vendedor.findById(id).populate("area");
   }
 
   async obtenerPorEmail(email) {
@@ -21,7 +21,7 @@ class VendedorRepository {
 
   async actualizar(id, datosActualizados) {
     return await Vendedor.findByIdAndUpdate(id, datosActualizados, {
-      new: true,
+      returnDocument: "after",
       runValidators: true,
     }).populate("area");
   }
@@ -31,7 +31,7 @@ class VendedorRepository {
       id,
       { activo: false },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );

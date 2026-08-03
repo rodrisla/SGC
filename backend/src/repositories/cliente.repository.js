@@ -24,7 +24,7 @@ class ClienteRepository {
 
   async actualizar(id, datosActualizados) {
     return await Cliente.findByIdAndUpdate(id, datosActualizados, {
-      new: true,
+      returnDocument: "after",
       runValidators: true,
     })
       .populate("vendedor", "nombre apellido email area activo")
@@ -36,7 +36,7 @@ class ClienteRepository {
       id,
       { activo: false },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     )

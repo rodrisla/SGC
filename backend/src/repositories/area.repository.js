@@ -22,7 +22,7 @@ class AreaRepository {
 
   async actualizar(id, datosActualizados) {
     return await Area.findByIdAndUpdate(id, datosActualizados, {
-      new: true,
+      returnDocument: "after",
       runValidators: true,
     });
   }
@@ -32,7 +32,7 @@ class AreaRepository {
       id,
       { activa: false },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );

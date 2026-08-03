@@ -82,7 +82,7 @@ const clienteSchema = new mongoose.Schema(
 
         vendedor: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Vendedor",
+            ref: "Vendedores",
             default: null,
         },
 
