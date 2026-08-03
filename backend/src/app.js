@@ -4,6 +4,7 @@ import {  notFound,  errorHandler,} from "./middlewares/error.middleware.js";
 import areaRoutes from "./routes/area.routes.js";
 import clienteRoutes from "./routes/cliente.routes.js";
 import actividadRoutes from "./routes/actividad.routes.js";
+import estadisticaRoutes from "./routes/estadistica.routes.js";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use("/api/vendedores", vendedorRoutes);
 app.use("/api/areas", areaRoutes);
 app.use("/api/clientes", clienteRoutes);
 app.use("/api/actividades", actividadRoutes);
+app.use("/api/estadisticas", estadisticaRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
