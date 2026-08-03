@@ -45,6 +45,11 @@ const vendedorSchema = new mongoose.Schema(
   }
 );
 
-const Vendedor = mongoose.model("Vendedores", vendedorSchema);
+const Vendedor = mongoose.model(
+  "Vendedor",
+  vendedorSchema,
+  "vendedores"
+);
+
 
 export default Vendedor;

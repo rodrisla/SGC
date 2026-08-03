@@ -3,6 +3,7 @@ import vendedorRoutes from "./routes/vendedor.routes.js";
 import {  notFound,  errorHandler,} from "./middlewares/error.middleware.js";
 import areaRoutes from "./routes/area.routes.js";
 import clienteRoutes from "./routes/cliente.routes.js";
+import actividadRoutes from "./routes/actividad.routes.js";
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get("/api/health", (req, res) => {
 app.use("/api/vendedores", vendedorRoutes);
 app.use("/api/areas", areaRoutes);
 app.use("/api/clientes", clienteRoutes);
+app.use("/api/actividades", actividadRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
